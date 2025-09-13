@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <style>
+    body {
+      background-color: rgb(125, 138, 159); /* Default background */
+      font-family: Arial, sans-serif;
+    }
+    .temp {
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid rgb(161, 47, 12);
+    }
+    #list {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+    <h1>to do this list</h1>
+    <br>
+<input type="text" id="myinput"></input>
+    <button id="add" >Add Item</button>
+    <ul id="list">
+        <li>task1</li>
+    </ul>
+
+    <script>
+        $(document).ready(function(){
+            $("#add").click(function(){
+                let task = $("#myinput").val();
+                if(task){
+                    $("#list").append("<li>"+ task +"</li>");
+                    $("#myinput").val('');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
